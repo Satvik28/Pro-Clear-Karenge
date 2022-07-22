@@ -1,5 +1,6 @@
 package JavaSols;
 import java.util.Scanner;
+import java.util.Vector;
 
 /**
  * ChessPiece
@@ -57,11 +58,50 @@ import java.util.Scanner;
  */
 public class ChessPiece {
 
-    static int[][] moveable = { { -2, 1 }, { -1, 2 }, { 1, 2 }, { 2, 1 }, { 2, -1 }, { 1, -2 }, { -1, -2 },
-            { -2, -1 } };
+    static class cell {
+        int x, y;
+        int dist;
+
+        public cell(int x, int y, int dist) {
+            this.x = x;
+            this.y = y;
+            this.dist = dist;
+        }
+    }
+
+    static boolean isInside(int x, int y, int n, int m) {
+        return (x > 0 && x <= n) && (y > 0 && y <= m);
+    }
+
+    static int minSteps(int x_pos, int y_pos, int tx, int ty, int n, int m) {
+        int[][] moveable = { { -2, 1 }, { -1, 2 }, { 1, 2 }, { 2, 1 }, { 2, -1 }, { 1, -2 }, { -1, -2 },
+                { -2, -1 } };
+        Vector<cell> que = new Vector<>();
+        que.add(new cell(x_pos,y_pos,0));
+        cell t;
+        int x, y;
+        boolean[][] visited = new boolean[n+1][m+1];
+        visited[x_pos][y_pos] = true;
+        while (!que.isEmpty()){
+            t = que.firstElement();
+            que.remove(0);
+            if (t.x == tx && t.y == ty){
+                return t.dist;
+            }
+            for (int i = 0; i <8; i++) {
+                x = t.x + moveable[i][0];
+                y = t.y + moveable[i][1];
+                if (isInside(x, y, n, m) && !visited[x][y]){
+                    visited[x][y] = true;
+                    que.add(new cell(x, y, t.dist+1));
+                }
+
+            }
+        }
+        return Integer.MAX_VALUE;
+    }
 
     public static void main(String[] args) {
-
         int T;
         Scanner scanner = new Scanner(System.in);
         T = scanner.nextInt();
@@ -69,6 +109,12 @@ public class ChessPiece {
             int n, m, r, c, s, k;
             n = scanner.nextInt();
             m = scanner.nextInt();
+            r = scanner.nextInt();
+            c = scanner.nextInt();
+            s = scanner.nextInt();
+            k = scanner.nextInt();
+            int minSteps = minSteps(r,c,s,k,n,m);
+            System.out.println("#"+i+" "+minSteps);
         }
         
     }
