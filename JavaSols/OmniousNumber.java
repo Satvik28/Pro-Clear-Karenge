@@ -1,3 +1,5 @@
+package JavaSols;
+
 import java.util.Scanner;
 
 public class OmniousNumber {
@@ -7,7 +9,7 @@ public class OmniousNumber {
         int end = sc.nextInt();
         int k = sc.nextInt();
         int n = sc.nextInt();
-        int arr[] = new int[n];
+        int[] arr = new int[n];
         for(int i = 0 ; i<n ; i++){
             arr[i] = sc.nextInt();
         }
@@ -19,7 +21,7 @@ public class OmniousNumber {
         int count = 0;
         for(int i = start ; i<=end ; i++){
             int temp = i;
-            int digitArray[] = new int[10];
+            int[] digitArray = new int[10];
             while(temp!=0){
                 digitArray[temp%10]++;
                 temp = temp/10;

@@ -1,9 +1,11 @@
+package JavaSols;
+
 import java.util.Scanner;
 
 public class WarmHole {
     public static int ans,n,temp =0;
-    public static int arr[][] = new int[35][35];
-    public static int mask[] = new int[35];
+    public static int[][] arr = new int[35][35];
+    public static int[] mask = new int[35];
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ans = Integer.MAX_VALUE;

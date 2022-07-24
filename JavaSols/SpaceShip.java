@@ -1,3 +1,5 @@
+package JavaSols;
+
 import java.util.Scanner;
 
 public class SpaceShip {
