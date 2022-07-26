@@ -2,6 +2,17 @@ package JavaSols;
 import java.util.*;
 
 
+/*
+1. Input Variables and main
+2. agressive cows(stalls, k, n) --> Binary Search using on sorted array: low = 1, hig = arr[n]-arr[0]
+                       isPossible then
+                        res = mid, low = mid+1,
+                       else high = mid-1
+3. isPossible(stalls, minDist, k) --> stalls[i]-lastPosCow >= minDist: cows++, lastPosCow = stalls[i]
+                                       return true if cows>=k else false
+ */
+
+
 public class AggressiveCows {
     static boolean isPossible(int[] stalls, int minDist, int k) {
         int cows = 1;

@@ -2,6 +2,16 @@ package JavaSols;
 
 import java.util.Scanner;
 
+/*
+    helper(arr, row, col, bomUsed, bomUsedIndex(row)) --> if two is encountered
+                                                            if bombUsed == true
+                                                                if within range --> Move ahead
+                                                                else game over
+                                                            else
+                                                                Move ahead, with setting bomb used as true and bomb used index as row
+                                                          otherwise: move ahead --> for 1 encounter add points by 1 else no increment Math.max(left_up, up, right_up)
+ */
+
 public class SpaceShip {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
