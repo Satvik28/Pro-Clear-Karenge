@@ -1,5 +1,6 @@
 package JavaSols;
 
+
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -51,5 +52,3 @@ public class ConvexHull {
         convexHull(points, n);
     }
 }
-
-
