@@ -5,10 +5,10 @@ Extra text to show how commits works and push kaise karte hai
 
 
 TODO: <br>
-- [ ] Oil Mine
-- [ ] Convex Hull
-- [ ] Doctor Probability
-- [ ] Sink Hole
-- [ ] Old Phone
-- [ ] Monotonic equation
-- [ ] Column Flipping
+- [x] Oil Mine
+- [x] Convex Hull
+- [x] Doctor Probability
+- [x] Sink Hole
+- [x] Old Phone
+- [x] Monotonic equation
+- [x] Column Flipping
